@@ -1,0 +1,181 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+*, *:before, *:after 
+{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box; 
+}
+
+*, body, html, div
+{
+    font-family: 'Roboto', sans-serif ;
+}
+
+
+/***************************************************
+              NAV TITLE AND LOGIN
+****************************************************/
+
+ .navbar-default
+{
+  background: none repeat scroll 0 0 #0101DF;
+  margin: 0px;
+  position: relative;
+  z-index: 1;
+}
+
+.nav h3,
+.nav h4,
+.nav h5
+{
+  color: white;
+}
+
+.nav h4
+{
+  margin: 10px 20px 0px 0px;
+}
+
+.nav h5
+{
+  margin: 0px 0px 0px 135px;
+}
+
+.jumbotron
+{
+  border-radius: 6px;
+  box-shadow: 0px 4px 6px #333;
+  margin: 0 auto;
+  margin-top: 6%;
+  padding: 15px;
+  width: 20%;
+}
+
+.jumbotron form
+{
+  padding: 10px;
+}
+
+
+/*********************************************************
+                    SECCION PRINCIPAL
+***********************************************************/
+.main-section 
+{
+  margin: 0px;
+  min-height: 100%;
+  padding: 0;
+}
+
+.main-container
+{
+  margin: 200px;
+  margin-top: 0px;
+}
+
+.breadcrumbs 
+{
+  background-color: #F5F5F5;
+  border-bottom: 1px solid #E5E5E5;
+  display: block;
+  line-height: 40px;
+  min-height: 40px;
+  padding: 0 12px 0 0;
+}
+
+.content-section
+{
+  float: right;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content-section-login
+{
+  float: right;
+  margin: 0 auto;
+  width: 100%;
+}
+
+body
+{
+  color: #333333;
+  line-height: 10px;
+}
+
+.page-header 
+{
+  border-bottom: 1px dotted #E2E2E2;
+  margin: 20px 0px 0px 0px;
+}
+
+.page-header h1
+{
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0 8px;
+  padding: 0;
+}
+
+.span12
+{
+  padding-top: 10px;
+}
+
+.tfoodbuttons
+{
+  padding-top: 10px;
+}
+
+/*********************************************************
+                    INPUTS
+***********************************************************/
+
+.form-control
+{
+  border-radius: 4px;
+  color: #555555;
+  display: inline-block;
+  font-size: 14px;
+  height: 30px;
+  line-height: 20px;
+  margin-bottom: 0px;
+  padding: 2px 4px;
+  vertical-align: middle;   
+}
+
+.form-inline .form-control 
+{
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.btn-success,
+.btn-primary,
+#newVale
+{
+  margin-left: 5px;
+  margin-top: 10px;
+  width: 80px;
+}
+
+#btn-default
+{
+  margin-left: 5px;
+  margin-top: 10px;
+  width: 115px;
+}
+
+
+#id,
+#seccion
+{
+  width: 50px;
+}
+
+#table_registros_filter
+{
+  padding-bottom: 5px;
+}

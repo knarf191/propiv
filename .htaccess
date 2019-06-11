@@ -1,0 +1,65 @@
+
+<IfModule mod_rewrite.c>
+  # ExpiresActive On
+  # ExpiresByType image/gif A2592000
+  # ExpiresByType image/png A2592000
+  # ExpiresByType image/jpg A2592000
+
+  RewriteEngine On
+  # !IMPORTANT! Set your RewriteBase here and don't forget trailing and leading
+  #  slashes.
+  # If your page resides at
+  #  http://www.example.com/mypage/test1
+  # then use
+  #RewriteBase /test/
+  RewriteBase /propiv/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?/$1 [L]
+
+
+</IfModule>
+ 
+<IfModule !mod_rewrite.c>
+  # If we don't have mod_rewrite installed, all 404's
+  # can be sent to index.php, and everything works as normal.  
+ 
+  ErrorDocument 404 /index.php
+</IfModule>
+
+# a2enmod expires
+# vim /etc/apache2/mods-available/expires.conf
+
+<IfModule mod_expires.c>
+          ExpiresActive on
+          ExpiresByType image/jpg "access plus 60 days"
+          ExpiresByType image/png "access plus 60 days"
+          ExpiresByType image/gif "access plus 60 days"
+          ExpiresByType image/jpeg "access plus 60 days"
+          ExpiresByType text/css "access plus 1 days"
+          ExpiresByType image/x-icon "access plus 1 month"
+          ExpiresByType application/pdf "access plus 1 month"
+          ExpiresByType audio/x-wav "access plus 1 month"
+          ExpiresByType audio/mpeg "access plus 1 month"
+          ExpiresByType video/mpeg "access plus 1 month"
+          ExpiresByType video/mp4 "access plus 1 month"
+          ExpiresByType video/quicktime "access plus 1 month"
+          ExpiresByType video/x-ms-wmv "access plus 1 month"
+          ExpiresByType application/x-shockwave-flash "access 1 month"
+          ExpiresByType text/javascript "access plus 1 week"
+          ExpiresByType application/x-javascript "access plus 1 week"
+          ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+ # a2enmod deflate 
+ # vim /etc/apache2/mods-available/deflate.conf
+
+
+SetOutputFilter DEFLATE
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+SetEnvIfNoCase Request_URI \.pdf$ no-gzip dont-vary
+php_value upload_max_filesize 100M
+php_value post_max_size 100M
+php_value max_execution_time 1000
+php_value max_input_time 1000
